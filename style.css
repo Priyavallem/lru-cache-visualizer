@@ -71,7 +71,7 @@ button:hover {
 }
 
 .cache-box:last-child {
-    background: #f44336; /* LRU */
+    background: #f44336; 
 }
 
 @keyframes slideIn {

@@ -1,4 +1,3 @@
-// Step 1: Create a Node (like Java class)
 class Node {
     constructor(key, value) {
         this.key = key;
@@ -8,27 +7,23 @@ class Node {
     }
 }
 
-// Step 2: LRU Cache Class
 class LRUCache {
     constructor(capacity) {
         this.capacity = capacity;
         this.map = new Map();
 
-        // Dummy head & tail (to simplify logic)
-        this.head = new Node(0, 0); // MRU side
-        this.tail = new Node(0, 0); // LRU side
+        this.head = new Node(0, 0); 
+        this.tail = new Node(0, 0); 
 
         this.head.next = this.tail;
         this.tail.prev = this.head;
     }
 
-    // Remove node from list
     remove(node) {
         node.prev.next = node.next;
         node.next.prev = node.prev;
     }
 
-    // Add node right after head (MRU)
     addToFront(node) {
         node.next = this.head.next;
         node.prev = this.head;
@@ -36,7 +31,6 @@ class LRUCache {
         this.head.next = node;
     }
 
-    // GET operation
     get(key) {
         if (!this.map.has(key)) {
             return -1;
@@ -49,7 +43,6 @@ class LRUCache {
         return node.value;
     }
 
-    // PUT operation
     put(key, value) {
         if (this.map.has(key)) {
             let node = this.map.get(key);
@@ -58,7 +51,6 @@ class LRUCache {
             this.addToFront(node);
         } else {
             if (this.map.size === this.capacity) {
-                // Remove LRU
                 let lru = this.tail.prev;
                 this.remove(lru);
                 this.map.delete(lru.key);
@@ -70,7 +62,6 @@ class LRUCache {
         }
     }
 
-    // For visualization
     getCacheState() {
         let result = [];
         let curr = this.head.next;
@@ -83,7 +74,6 @@ class LRUCache {
 }
 let cache = null;
 
-// Create cache with given capacity
 function createCache() {
     const cap = parseInt(document.getElementById("capacityInput").value);
 
@@ -96,7 +86,6 @@ function createCache() {
     updateCacheUI();
 }
 
-// PUT operation from UI
 function putValue() {
     if (!cache) {
         alert("Create cache first");
@@ -115,7 +104,6 @@ function putValue() {
     updateCacheUI();
 }
 
-// GET operation from UI
 function getValue() {
     if (!cache) {
         alert("Create cache first");
@@ -135,7 +123,6 @@ function getValue() {
     updateCacheUI();
 }
 
-// Update cache visualization
 function updateCacheUI() {
     const container = document.getElementById("cacheContainer");
     container.innerHTML = "";
