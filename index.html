@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LRU Cache Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+    <h1>LRU Cache Visualizer</h1>
+
+    <!-- Capacity Section -->
+    <div class="section">
+        <label>Cache Capacity:</label>
+        <input type="number" id="capacityInput" placeholder="Enter capacity">
+        <button onclick="createCache()">Create Cache</button>
+    </div>
+
+    <!-- PUT Section -->
+    <div class="section">
+        <h3>PUT Operation</h3>
+        <input type="text" id="putKey" placeholder="Key">
+        <input type="text" id="putValue" placeholder="Value">
+        <button onclick="putValue()">PUT</button>
+    </div>
+
+    <!-- GET Section -->
+    <div class="section">
+        <h3>GET Operation</h3>
+        <input type="text" id="getKey" placeholder="Key">
+        <button onclick="getValue()">GET</button>
+        <p id="getResult"></p>
+    </div>
+
+    <!-- Cache Display -->
+    <h3>Cache State (MRU ➝ LRU)</h3>
+    <div id="cacheContainer"></div>
+
+    <script src="script.js"></script>
+    </div>
+</body>
+</html>

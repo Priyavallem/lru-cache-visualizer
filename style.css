@@ -1,0 +1,86 @@
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-container {
+    background: #ffffff;
+    width: 700px;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.section {
+    background: #f4f6f8;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.section h3 {
+    margin-top: 0;
+}
+
+input {
+    padding: 8px;
+    margin-right: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 5px;
+    background: #667eea;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #5a67d8;
+}
+
+#cacheContainer {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+.cache-box {
+    padding: 14px;
+    min-width: 90px;
+    text-align: center;
+    background: #4caf50;
+    color: white;
+    border-radius: 8px;
+    font-weight: bold;
+    animation: slideIn 0.3s ease;
+    transition: transform 0.3s ease;
+}
+
+.cache-box:last-child {
+    background: #f44336; /* LRU */
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
