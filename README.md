@@ -39,9 +39,6 @@ It is widely used in **operating systems, databases, and web browsers**.
 ##  Use Case
 This project helps in understanding how caching mechanisms work internally and is useful for learning **DSA concepts with visualization**.
 
-##  Preview
-(Add screenshots here if needed)
-
 
 ## Author
 Vallem Chandu Priya
